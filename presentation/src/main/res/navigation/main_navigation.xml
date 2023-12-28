@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.presentation.features.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_boredFragment"
+            app:destination="@id/boredFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_countriesFragment"
+            app:destination="@id/countriesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dogsFragment"
+            app:destination="@id/dogsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boredFragment"
+        android:name="com.example.presentation.features.bored.BoredFragment"
+        android:label="BoredFragment"
+        tools:layout="@layout/fragment_bored" />
+    <fragment
+        android:id="@+id/countriesFragment"
+        android:name="com.example.presentation.features.countries.CountriesFragment"
+        android:label="CountriesFragment"
+        tools:layout="@layout/fragment_countries">
+        <action
+            android:id="@+id/action_countriesFragment_to_countryDetailFragment"
+            app:destination="@id/countryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryDetailFragment"
+        android:name="com.example.presentation.features.countries.CountryDetailFragment"
+        android:label="CountryDetailFragment"
+        tools:layout="@layout/fragment_country_detail">
+        <argument
+            android:name="countryName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/dogsFragment"
+        android:name="com.example.presentation.features.dogs.DogsFragment"
+        android:label="DogsFragment"
+        tools:layout="@layout/fragment_dogs" />
+</navigation>
