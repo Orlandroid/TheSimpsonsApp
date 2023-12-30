@@ -7,6 +7,7 @@ import com.example.presentation.base.BaseFragment
 import com.example.presentation.databinding.FragmentCharacterDetailBinding
 import com.example.presentation.extensions.fromJson
 import com.example.presentation.extensions.loadImage
+import com.example.presentation.extensions.setTextFromHtml
 import com.example.presentation.features.MainActivity
 
 class CharacterDetailFragment :
@@ -26,6 +27,13 @@ class CharacterDetailFragment :
     private fun bind(character: Doc) = with(binding) {
         image.loadImage(character.Imagen)
         tvHistory.text = character.Historia
+        tvStatus.setTextFromHtml(templateHTML(label = "Estado", value = character.Estado))
+        tvGenero.setTextFromHtml(templateHTML(label = "Genero", value = character.Genero))
+        tvOccupation.setTextFromHtml(templateHTML(label = "Ocupacion", value = character.Ocupacion))
     }
+
+    private fun templateHTML(label: String, value: String) = """
+        <b>$label</b>: $value
+    """.trimIndent()
 
 }
