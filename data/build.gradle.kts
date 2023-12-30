@@ -59,5 +59,5 @@ dependencies {
     implementation(Dependencies.DAGGER_HILT)
     kapt(Dependencies.DAGGER_HILT_ANDROID_COMPILER)
     kapt(Dependencies.DAGGER_HILT_COMPILER)
-
+    implementation(Dependencies.PAGING)
 }

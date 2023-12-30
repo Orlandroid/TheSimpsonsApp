@@ -45,8 +45,7 @@ fun View.navigate(action: NavDirections) {
 }
 
 fun ImageView.loadImage(urlImage: String) {
-    Glide.with(context).load(urlImage).placeholder(R.drawable.loading_img)
-        .transition(DrawableTransitionOptions.withCrossFade()).circleCrop().into(this)
+    Glide.with(context).load(urlImage).placeholder(R.drawable.loading_img).into(this)
 }
 
 

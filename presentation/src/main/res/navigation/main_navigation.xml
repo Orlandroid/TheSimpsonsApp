@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/simpsonsFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -48,4 +48,20 @@
         android:name="com.example.presentation.features.dogs.DogsFragment"
         android:label="DogsFragment"
         tools:layout="@layout/fragment_dogs" />
+    <fragment
+        android:id="@+id/simpsonsFragment"
+        android:name="com.example.presentation.features.simpsons.SimpsonsFragment"
+        android:label="SimpsonsFragment" >
+        <action
+            android:id="@+id/action_simpsonsFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.example.presentation.features.simpsons.CharacterDetailFragment"
+        android:label="CharacterDetailFragment" >
+        <argument
+            android:name="character"
+            app:argType="string" />
+    </fragment>
 </navigation>
